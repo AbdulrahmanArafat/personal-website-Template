@@ -1,0 +1,742 @@
+/* ── CSS Variables (Light / Dark) ─────────────────────── */
+:root {
+    --bg-page:       #f5f5f3;
+    --bg-surface:    #ffffff;
+    --border:        #111111;
+    --text-primary:  #111111;
+    --text-muted:    #555555;
+    --text-faint:    #888888;
+    --link:          #0055cc;
+    --active-bg:     #111111;
+    --active-text:   #ffffff;
+    --hover-bg:      #f0f0f0;
+    --btn-bg:        #111111;
+    --btn-text:      #ffffff;
+    --btn-hover:     #333333;
+    --input-bg:      #fafafa;
+    --tag-border:    #111111;
+}
+
+[data-theme="dark"] {
+    --bg-page:       #0f0f0f;
+    --bg-surface:    #1a1a1a;
+    --border:        #444444;
+    --text-primary:  #f0f0f0;
+    --text-muted:    #aaaaaa;
+    --text-faint:    #777777;
+    --link:          #60aaff;
+    --active-bg:     #f0f0f0;
+    --active-text:   #111111;
+    --hover-bg:      #2a2a2a;
+    --btn-bg:        #f0f0f0;
+    --btn-text:      #111111;
+    --btn-hover:     #cccccc;
+    --input-bg:      #222222;
+    --tag-border:    #555555;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--bg-page);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+header {
+    width: 92%;
+    max-width: 1200px;
+    margin-top: 32px;
+    border: 3px solid var(--border);
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* ── Nav ───────────────────────────────────────────────── */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 3px solid var(--border);
+    padding: 14px 24px;
+    gap: 16px;
+}
+
+nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+nav .brand img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav .brand h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    color: var(--text-primary);
+}
+
+nav .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 6px 13px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    background-color: var(--hover-bg);
+}
+
+nav ul li a.active {
+    background-color: var(--active-bg);
+    color: var(--active-text);
+}
+
+/* ── Dark-mode toggle button ───────────────────────────── */
+#theme-toggle {
+    background: none;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    transition: border-color 0.3s, background-color 0.2s;
+    flex-shrink: 0;
+    color: var(--text-primary);
+}
+
+#theme-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+/* ── Hero (Home page) ──────────────────────────────────── */
+header .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 72px 40px;
+    gap: 16px;
+}
+
+header .hero p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 52px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+header .hero h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+/* ── Page title (inner pages) ──────────────────────────── */
+header .page-title {
+    padding: 48px 40px 40px;
+}
+
+header .page-title h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 44px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+header .page-title p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ── Container ─────────────────────────────────────────── */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid var(--border);
+    padding: 0;
+    width: 92%;
+    max-width: 1200px;
+    background-color: var(--bg-surface);
+    margin-bottom: 32px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* ── Main (3-column) ───────────────────────────────────── */
+.container main {
+    display: flex;
+    width: 100%;
+    border-bottom: 3px solid var(--border);
+    align-items: stretch;
+}
+
+.container main section {
+    width: 33.3333%;
+    padding: 24px;
+}
+
+.container main section h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+    color: var(--text-primary);
+}
+
+.container main section ul {
+    padding-left: 20px;
+}
+
+.container main section ul li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* Middle column */
+.container main .middle {
+    border-left: 3px solid var(--border);
+    border-right: 3px solid var(--border);
+    padding: 0;
+}
+
+.container main .middle .work {
+    border-bottom: 3px solid var(--border);
+    padding: 24px;
+}
+
+.container main .middle .middle2 {
+    padding: 24px;
+}
+
+.container main .middle .work h1,
+.container main .middle .middle2 h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.container main .middle .work h2,
+.container main .middle .middle2 h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.container main .middle .work p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+/* Education */
+.container main section h2.edu {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 8px;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Shared link style */
+.content-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+}
+
+.content-link:hover {
+    text-decoration: underline;
+}
+
+/* ── Footer / Testimonials ─────────────────────────────── */
+.container footer {
+    width: 100%;
+    padding: 32px 24px 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.container footer > h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.container footer > p {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--text-faint);
+}
+
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.reviews div {
+    flex: 1 1 220px;
+    margin: 12px;
+    padding: 20px 24px;
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    transition: border-color 0.3s;
+}
+
+.reviews h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.reviews h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-faint);
+}
+
+/* ── Footer copyright (inner pages) ────────────────────── */
+.container footer.simple {
+    padding: 20px 24px;
+    text-align: center;
+    border-top: 3px solid var(--border);
+}
+
+.container footer.simple p {
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-top: 0;
+}
+
+/* ── Projects grid ─────────────────────────────────────── */
+.projects-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 3px solid var(--border);
+}
+
+.project-card {
+    padding: 28px 24px;
+    border-right: 3px solid var(--border);
+    transition: border-color 0.3s;
+}
+
+.project-card:last-child {
+    border-right: none;
+}
+
+.project-card h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.project-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.project-card .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border: 2px solid var(--tag-border);
+    border-radius: 999px;
+    margin-right: 4px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* ── Articles list ─────────────────────────────────────── */
+.articles-list {
+    width: 100%;
+}
+
+.article-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 24px;
+    border-bottom: 3px solid var(--border);
+    transition: border-color 0.3s;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-date {
+    flex-shrink: 0;
+    width: 80px;
+    font-size: 13px;
+    color: var(--text-faint);
+    font-weight: 600;
+    padding-top: 3px;
+}
+
+.article-body h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.article-body p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.article-body .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border: 2px solid var(--tag-border);
+    border-radius: 999px;
+    margin-right: 4px;
+    color: var(--text-primary);
+}
+
+.article-body a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+}
+
+.article-body a:hover {
+    text-decoration: underline;
+}
+
+/* ── Contact layout ────────────────────────────────────── */
+.contact-layout {
+    display: flex;
+    width: 100%;
+    border-bottom: 3px solid var(--border);
+    align-items: stretch;
+}
+
+.contact-form-section {
+    flex: 2;
+    padding: 32px;
+    border-right: 3px solid var(--border);
+    transition: border-color 0.3s;
+}
+
+.contact-form-section h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, background-color 0.3s, color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--text-muted);
+    background-color: var(--bg-surface);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+button[type="submit"] {
+    padding: 12px 32px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--btn-hover);
+}
+
+.contact-info-section {
+    flex: 1;
+    padding: 32px 24px;
+}
+
+.contact-info-section h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+
+.info-item p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.info-item a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+    header,
+    .container {
+        width: 96%;
+        margin-top: 16px;
+    }
+
+    header .hero {
+        padding: 48px 24px;
+    }
+
+    header .hero p {
+        font-size: 36px;
+    }
+
+    header .hero h2 {
+        font-size: 15px;
+    }
+
+    header .page-title {
+        padding: 32px 24px;
+    }
+
+    header .page-title h2 {
+        font-size: 32px;
+    }
+
+    nav .brand h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 4px 8px;
+    }
+
+    .container main {
+        flex-direction: column;
+    }
+
+    .container main section {
+        width: 100%;
+        border-bottom: 3px solid var(--border);
+    }
+
+    .container main .middle {
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid var(--border);
+    }
+
+    .container main section:last-child {
+        border-bottom: none;
+    }
+
+    .reviews {
+        flex-direction: column;
+    }
+
+    .reviews div {
+        margin: 8px 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        border-right: none;
+        border-bottom: 3px solid var(--border);
+    }
+
+    .project-card:last-child {
+        border-bottom: none;
+    }
+
+    .contact-layout {
+        flex-direction: column;
+    }
+
+    .contact-form-section {
+        border-right: none;
+        border-bottom: 3px solid var(--border);
+        padding: 24px;
+    }
+
+    .contact-info-section {
+        padding: 24px;
+    }
+
+    .article-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .article-date {
+        width: auto;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
