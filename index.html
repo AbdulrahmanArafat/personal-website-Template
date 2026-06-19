@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdulrahman Arafat – Full Stack Developer portfolio showcasing projects, work experience, and education.">
+    <title>Abdulrahman Arafat | Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            background-color: #f9f9f7;
+            font-family: 'Inter', sans-serif;
+        }
+
+        header {
+            width: 92%;
+            max-width: 1200px;
+            margin-top: 32px;
+            border: 3px solid black;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-bottom: 3px solid black;
+            padding: 14px 24px;
+        }
+
+        nav .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav .brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav .brand h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            letter-spacing: 0.3px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 14px;
+            color: black;
+            font-family: 'Inter', sans-serif;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        header .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 72px 40px;
+            gap: 16px;
+        }
+
+        header .hero p {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 52px;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        header .hero h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            text-align: center;
+            color: #444;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3px solid black;
+            padding: 0;
+            width: 92%;
+            max-width: 1200px;
+            background-color: white;
+        }
+
+        .container main {
+            display: flex;
+            width: 100%;
+            border-bottom: 3px solid black;
+            align-items: stretch;
+        }
+
+        .container main section {
+            width: 33.3333333%;
+            padding: 24px;
+            margin: 0;
+        }
+
+        .container main section h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .container main section ul {
+            padding-left: 20px;
+        }
+
+        .container main section ul li {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .container main .middle {
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            padding: 0;
+        }
+
+        .container main .middle .work {
+            border-bottom: 3px solid black;
+            padding: 24px;
+        }
+
+        .container main .middle .middle2 {
+            padding: 24px;
+        }
+
+        .container main .middle .work h1,
+        .container main .middle .middle2 h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .container main .middle .work h2,
+        .container main .middle .middle2 h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .container main .middle .work p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .content-link {
+            display: inline-block;
+            margin-top: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgb(0, 100, 220);
+            text-decoration: none;
+        }
+
+        .content-link:hover {
+            text-decoration: underline;
+        }
+
+        .container main section h2.edu {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            margin-top: 8px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .container footer {
+            width: 100%;
+            padding: 32px 24px 24px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container footer > h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        body .container footer .reviews {
+            display: flex;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        body .container footer .reviews div {
+            flex: 1 1 220px;
+            margin: 12px;
+            padding: 20px 24px;
+            border: 3px solid black;
+            border-radius: 16px;
+        }
+
+        body .container footer .reviews h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        body .container footer .reviews h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: gray;
+        }
+
+        .container footer > p {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header,
+            .container {
+                width: 96%;
+                margin-top: 16px;
+            }
+
+            header .hero {
+                padding: 48px 24px;
+            }
+
+            header .hero p {
+                font-size: 36px;
+            }
+
+            header .hero h2 {
+                font-size: 15px;
+            }
+
+            nav .brand h1 {
+                font-size: 18px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+
+            .container main {
+                flex-direction: column;
+            }
+
+            .container main section {
+                width: 100%;
+                border-bottom: 3px solid black;
+            }
+
+            .container main .middle {
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+            }
+
+            .container main section:last-child {
+                border-bottom: none;
+            }
+
+            body .container footer .reviews {
+                flex-direction: column;
+            }
+
+            body .container footer .reviews div {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <img src="me.jpg" alt="Abdulrahman Arafat profile photo">
+                <h1>Abdulrahman Arafat</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <p>Full Stack Developer</p>
+            <h2>Passionate Full Stack Developer building modern web applications.</h2>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <main>
+
+            <section>
+                <h1>Projects</h1>
+                <ul>
+                    <li>HTML Only Portfolio</li>
+                    <li>Calculator</li>
+                    <li>Quiz App</li>
+                    <li>Countdown Timer</li>
+                    <li>Product Upcoming Page</li>
+                </ul>
+            </section>
+
+            <section class="middle">
+                <div class="work">
+                    <h1>Work Experience</h1>
+                    <h2>roadmap.sh</h2>
+                    <p>Solved All Front End Projects</p>
+                    <a class="content-link" href="https://roadmap.sh/u/abdulrahman0">View My Profile</a>
+                </div>
+
+                <div class="middle2">
+                    <h1>OpenSource Work</h1>
+                    <h2>Contributed to 50 open-source projects and built personal projects with over 200 GitHub stars.</h2>
+                    <a class="content-link" href="https://roadmap.sh/u/abdulrahman0">View My GitHub Profile</a>
+                </div>
+            </section>
+
+            <section>
+                <h1>Education</h1>
+                <h2 class="edu">Bachelor's Degree in Computer Science, Faculty of Specific Education, Mansoura University.</h2>
+            </section>
+
+        </main>
+
+        <footer>
+            <h1>Testimonials</h1>
+            <div class="reviews">
+                <div>
+                    <h1>"Abdulrahman delivered a clean and responsive website with great attention to detail. Highly recommended!"</h1>
+                    <h2>— Sarah Johnson, Client</h2>
+                </div>
+
+                <div>
+                    <h1>"Professional, reliable, and easy to work with. The project was completed on time and exceeded expectations."</h1>
+                    <h2>— Michael Brown, Client</h2>
+                </div>
+
+                <div>
+                    <h1>"Excellent communication and strong technical skills. I would definitely work with him again."</h1>
+                    <h2>— Emily Davis, Client</h2>
+                </div>
+            </div>
+
+            <p>© 2026 Abdulrahman Arafat. All rights reserved.</p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
