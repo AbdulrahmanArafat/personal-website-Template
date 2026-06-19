@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -8,223 +8,7 @@
     <meta name="keywords" content="Abdulrahman Arafat, articles, blog, web development, HTML, CSS, JavaScript">
     <title>Articles | Abdulrahman Arafat</title>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-direction: column;
-            background-color: #f9f9f7;
-            font-family: 'Inter', sans-serif;
-        }
-
-        header {
-            width: 92%;
-            max-width: 1200px;
-            margin-top: 32px;
-            border: 3px solid black;
-            border-bottom: none;
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border-bottom: 3px solid black;
-            padding: 14px 24px;
-        }
-
-        nav .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        nav .brand img {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        nav .brand h1 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 22px;
-            letter-spacing: 0.3px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 8px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 6px 14px;
-            color: black;
-            font-family: 'Inter', sans-serif;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #f0f0f0;
-        }
-
-        nav ul li a.active {
-            background-color: #000;
-            color: #fff;
-            border-radius: 4px;
-        }
-
-        header .page-title {
-            padding: 48px 40px 40px;
-        }
-
-        header .page-title h2 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 44px;
-            margin-bottom: 10px;
-        }
-
-        header .page-title p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 3px solid black;
-            padding: 0;
-            width: 92%;
-            max-width: 1200px;
-            background-color: white;
-            margin-bottom: 32px;
-        }
-
-        .articles-list {
-            width: 100%;
-        }
-
-        .article-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
-            padding: 28px 24px;
-            border-bottom: 3px solid black;
-        }
-
-        .article-item:last-child {
-            border-bottom: none;
-        }
-
-        .article-date {
-            flex-shrink: 0;
-            width: 80px;
-            font-size: 13px;
-            color: #888;
-            font-weight: 600;
-            padding-top: 3px;
-        }
-
-        .article-body h2 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .article-body p {
-            font-size: 15px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 14px;
-        }
-
-        .article-body .tag {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 3px 10px;
-            border: 2px solid black;
-            border-radius: 999px;
-            margin-right: 4px;
-        }
-
-        .article-body a {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            color: rgb(0, 100, 220);
-            text-decoration: none;
-        }
-
-        .article-body a:hover {
-            text-decoration: underline;
-        }
-
-        .container footer {
-            width: 100%;
-            padding: 20px 24px;
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-            font-family: 'Inter', sans-serif;
-            border-top: 3px solid black;
-        }
-
-        @media (max-width: 768px) {
-            header,
-            .container {
-                width: 96%;
-                margin-top: 16px;
-            }
-
-            header .page-title {
-                padding: 32px 24px;
-            }
-
-            header .page-title h2 {
-                font-size: 32px;
-            }
-
-            nav .brand h1 {
-                font-size: 18px;
-            }
-
-            nav ul li a {
-                font-size: 14px;
-                padding: 4px 8px;
-            }
-
-            .article-item {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .article-date {
-                width: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -234,12 +18,15 @@
                 <img src="me.jpg" alt="Abdulrahman Arafat profile photo">
                 <h1>Abdulrahman Arafat</h1>
             </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="articles.html" class="active">Articles</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="articles.html" class="active">Articles</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+            </div>
         </nav>
         <div class="page-title">
             <h2>Articles</h2>
@@ -296,11 +83,24 @@
 
         </div>
 
-        <footer>
+        <footer class="simple">
             <p>© 2026 Abdulrahman Arafat. All rights reserved.</p>
         </footer>
     </div>
 
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const saved = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+        btn.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 
 </html>

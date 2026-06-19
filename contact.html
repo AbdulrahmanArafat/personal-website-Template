@@ -1,302 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Contact Abdulrahman Arafat – Full Stack Developer. Send a message for project inquiries, collaborations, or any questions.">
+    <meta name="description" content="Contact Abdulrahman Arafat – Full Stack Developer. Send a message for project inquiries, collaborations, or any questions.">
     <meta name="keywords" content="Abdulrahman Arafat, contact, hire, web developer, freelance">
     <title>Contact | Abdulrahman Arafat</title>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-direction: column;
-            background-color: #f9f9f7;
-            font-family: 'Inter', sans-serif;
-        }
-
-        header {
-            width: 92%;
-            max-width: 1200px;
-            margin-top: 32px;
-            border: 3px solid black;
-            border-bottom: none;
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border-bottom: 3px solid black;
-            padding: 14px 24px;
-        }
-
-        nav .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        nav .brand img {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        nav .brand h1 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 22px;
-            letter-spacing: 0.3px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 8px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 6px 14px;
-            color: black;
-            font-family: 'Inter', sans-serif;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #f0f0f0;
-        }
-
-        nav ul li a.active {
-            background-color: #000;
-            color: #fff;
-            border-radius: 4px;
-        }
-
-        header .page-title {
-            padding: 48px 40px 40px;
-        }
-
-        header .page-title h2 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 44px;
-            margin-bottom: 10px;
-        }
-
-        header .page-title p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            border: 3px solid black;
-            padding: 0;
-            width: 92%;
-            max-width: 1200px;
-            background-color: white;
-            margin-bottom: 32px;
-        }
-
-        .contact-layout {
-            display: flex;
-            width: 100%;
-            border-bottom: 3px solid black;
-            align-items: stretch;
-        }
-
-        .contact-form-section {
-            flex: 2;
-            padding: 32px 32px;
-            border-right: 3px solid black;
-        }
-
-        .contact-form-section h2 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 22px;
-            margin-bottom: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 2px solid black;
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            background-color: #fafafa;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: #555;
-            background-color: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 16px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        button[type="submit"] {
-            padding: 12px 32px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #333;
-        }
-
-        .contact-info-section {
-            flex: 1;
-            padding: 32px 24px;
-        }
-
-        .contact-info-section h2 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 22px;
-            margin-bottom: 24px;
-        }
-
-        .info-item {
-            margin-bottom: 20px;
-        }
-
-        .info-item h3 {
-            font-size: 13px;
-            font-weight: 600;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-
-        .info-item p {
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .info-item a {
-            font-size: 15px;
-            font-weight: 600;
-            color: rgb(0, 100, 220);
-            text-decoration: none;
-        }
-
-        .info-item a:hover {
-            text-decoration: underline;
-        }
-
-        .container footer {
-            width: 100%;
-            padding: 20px 24px;
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-
-            header,
-            .container {
-                width: 96%;
-                margin-top: 16px;
-            }
-
-            header .page-title {
-                padding: 32px 24px;
-            }
-
-            header .page-title h2 {
-                font-size: 32px;
-            }
-
-            nav .brand h1 {
-                font-size: 18px;
-            }
-
-            nav ul li a {
-                font-size: 14px;
-                padding: 4px 8px;
-            }
-
-            .contact-layout {
-                flex-direction: column;
-            }
-
-            .contact-form-section {
-                border-right: none;
-                border-bottom: 3px solid black;
-                padding: 24px;
-            }
-
-            .contact-info-section {
-                padding: 24px;
-            }
-
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -306,12 +18,15 @@
                 <img src="me.jpg" alt="Abdulrahman Arafat profile photo">
                 <h1>Abdulrahman Arafat</h1>
             </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+            </div>
         </nav>
         <div class="page-title">
             <h2>Contact</h2>
@@ -354,8 +69,7 @@
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell me about your project or idea..."
-                            required></textarea>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
                     </div>
 
                     <button type="submit">Send Message</button>
@@ -393,11 +107,24 @@
 
         </div>
 
-        <footer>
+        <footer class="simple">
             <p>© 2026 Abdulrahman Arafat. All rights reserved.</p>
         </footer>
     </div>
 
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const saved = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+        btn.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 
 </html>
